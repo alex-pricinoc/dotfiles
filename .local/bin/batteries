@@ -1,0 +1,17 @@
+#!/usr/bin/env -S fish -N
+
+set -l batteries /sys/class/power_supply/hid*
+
+for device in $batteries
+    set -l name (cat $device/model_name)
+    set -l capacity (cat $device/capacity)
+    set -l _status (cat $device/status)
+
+    if isatty
+        echo "$name: $capacity% ($_status)"
+    end
+
+    if test $capacity -lt 30
+        notify-send "$name" "battery is at $capacity%"
+    end
+end

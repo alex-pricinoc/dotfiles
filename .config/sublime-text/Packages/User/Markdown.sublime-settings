@@ -1,0 +1,26 @@
+{
+  "mini_diff": false,
+  "light_color_scheme": "Writer.sublime-color-scheme",
+  "dark_color_scheme": "Writer Dark.sublime-color-scheme",
+  "draw_indent_guides": false,
+  "draw_white_space": [
+    "selection_none"
+  ],
+  "font_face": "iA Writer Mono V Text",
+  "font_size": 13.0,
+  "line_padding_bottom": 6,
+  "line_padding_top": 6,
+  "caret_extra_width": 3,
+  "gutter": false,
+  "word_wrap": true,
+  "wrap_width": 72,
+  "draw_centered": true,
+  "wrap_width_style": "constant",
+  "scroll_context_lines": 2,
+  "scroll_past_end": 0.5,
+  "auto_complete": false,
+  "caret_style": "smooth",
+  "spell_check": true,
+  // Wiki
+  "mde.keymap_disable.open_journal": false,
+}

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec swayidle timeout 86400 'swaymsg -q "output * power off"' resume 'swaymsg -q "output * power on"'

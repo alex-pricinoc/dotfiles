@@ -1,0 +1,58 @@
+# https://docs.helix-editor.com/master/languages.html#language-server-configuration
+[[language]]
+name = "fish"
+auto-format = true
+formatter = { command = "fish_indent" }
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "dprint", args = ["fmt", "--stdin", "json"] }
+
+[[language]]
+name = "toml"
+auto-format = true
+formatter = { command = "dprint", args = ["fmt", "--stdin", "toml"] }
+
+[[language]]
+name = "dockerfile"
+auto-format = true
+formatter = { command = "dprint", args = ["fmt", "--stdin", "dockerfile"] }
+
+[[language]]
+name = "markdown"
+text-width = 80
+soft-wrap.wrap-at-text-width = true
+
+[[language]]
+name = "scheme"
+shebangs = ["csi"]
+file-types = ["ss", "scm"]
+
+[[language]]
+name = "text"
+scope = "source.text"
+injection-regex = "text"
+file-types = ["txt"]
+comment-token = "#"
+roots = []
+
+[[language]]
+name = "conf"
+scope = "source.conf"
+file-types = ["conf"]
+comment-token = "#"
+roots = []
+
+[[language]]
+name = "lua"
+shebangs = ["wpexec"]
+
+[[language]]
+name = "rust"
+auto-format = true
+
+### LANGUAGE SERVERS
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+check.extraArgs = ["--locked"]

@@ -1,0 +1,142 @@
+#  Class attributes, html tag attributes
+"attribute" = "#333333"
+
+# also used for fuzzy search matches
+"special" = "black"
+
+"type" = "type"
+"type.enum" = "blue"
+
+"constructor" = "type"
+
+"constant" = "pink"
+# "constant.builtin"
+# "constant.numeric"
+"constant.character.escape" = "cyan"
+
+"string" = "cyan"
+"string.regexp" = "#ff7598"
+"string.special" = "#324332"
+"string.special.symbol" = "pink"
+
+"comment" = "#868685"
+"comment.block.documentation" = "cyan"
+
+"variable" = "black"
+"variable.builtin" = "type"
+"variable.parameter" = "black"
+# Fields of composite data types (e.g. structs, unions). CSS props
+"variable.other.member" = "black"
+
+"label" = "black06"
+"keyword" = "black06"
+"keyword.control" = "blue"
+
+"keyword.storage" = "type"
+"keyword.storage.modifier" = "black06"
+"keyword.function" = "type"
+
+"punctuation" = "black"
+# Commas, colons
+"punctuation.delimiter" = "#86869D"
+# Parentheses, angle brackets, etc.
+"punctuation.bracket" = "#86869D"
+
+"operator" = "black06"
+
+"function" = "black"
+
+"tag" = "blue"
+
+"namespace" = "black"
+
+# "markup.heading.marker" = { fg = "gray07" }
+# "markup.heading.1" = { fg = "white", modifiers = ["bold"] }
+# "markup.heading.2" = { fg = "gray07", modifiers = ["bold"] }
+# "markup.heading.3" = { fg = "gray07", modifiers = ["bold"] }
+# "markup.heading.4" = { fg = "gray07", modifiers = ["bold"] }
+# "markup.heading.5" = { fg = "gray06", modifiers = ["bold"] }
+# "markup.heading.6" = { fg = "gray06", modifiers = ["bold"] }
+# "markup.list" = "gray07"
+# "markup.bold" = { modifiers = ["bold"] }
+# "markup.italic" = { modifiers = ["italic"] }
+# "markup.link.url" = { fg = "cyan", modifiers = ["underlined"] }
+# "markup.link.text" = "blue"
+# "markup.raw" = "yellow"
+
+# "diff.plus" = "bright_green"
+# "diff.minus" = "bright_red"
+# "diff.delta" = "bright_cyan"
+
+"ui.background" = { bg = "bg" }
+"ui.background.separator" = { fg = "black" }
+
+"ui.linenr" = "gray02"
+"ui.linenr.selected" = { fg = "black" }
+
+"ui.statusline" = { fg = "black", bg = "gray02" }
+"ui.statusline.inactive" = { fg = "#757575", bg = "#F0F0EF" }
+"ui.statusline.normal" = { fg = "black", bg = "#85FFBC", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "black", bg = "light-yellow", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "black", bg = "dark-blue", modifiers = ["bold"] }
+
+"ui.popup" = { bg = "gray01" }
+"ui.window" = "#E2E2E1"
+"ui.help" = { bg = "gray01", fg = "black" }
+
+"ui.text" = "black"
+"ui.text.focus" = { bg = "gray02" }
+
+"ui.virtual" = { fg = "gray02" }
+"ui.virtual.ruler" = { bg = "gray01" }
+"ui.virtual.indent-guide" = { fg = "#EEEEED" }
+"ui.virtual.inlay-hint" = { fg = "#5D5D5D", bg = "#E9E9E8" }
+
+"ui.selection" = { bg = "lighter-blue" }
+# TODO
+"ui.selection.primary" = { bg = "light-blue" }
+
+"ui.cursor" = { bg = "gray02" }
+"ui.cursor.primary" = { bg = "#CFCFCF" }
+"ui.cursor.match" = { fg = "#0044ff", modifiers = ["bold"] }
+"ui.cursor.insert" = { bg = "#EEEEEE" }
+"ui.cursor.select" = { bg = "dark-blue" }
+"ui.cursorline.primary" = { bg = "light-yellow" }
+
+"ui.highlight" = { bg = "light-blue" }
+
+"ui.menu" = { fg = "black", bg = "gray01" }
+"ui.menu.selected" = { fg = "black", bg = "gray02" }
+"ui.menu.scroll" = { fg = "#ACACAC", bg = "#D8D8D7" }
+
+"diagnostic.hint" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.info" = { underline = { color = "dark-blue", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "dark-yellow", style = "curl" } }
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+
+warning = "dark-yellow"
+error = "red"
+info = "dark-blue"
+hint = "cyan"
+
+[palette]
+bg = "#FDFDFC"
+black = "#000000"
+blue = "#5353A1"
+dark-blue = "#86ABFE"
+light-blue = "#D2ECFD"
+lighter-blue = "#E3F0F8"
+light-yellow = "#FEFEBD"
+dark-yellow = "#FFE642"
+red = "#990000"
+accent = "#0044FF"
+
+cyan = "#116432"
+pink = "#750054"
+
+gray01 = "#F0F0EF"
+gray02 = "#E4E4E3"
+
+black06 = "#656565"
+
+type = "#334E5B"

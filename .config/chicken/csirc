@@ -1,0 +1,33 @@
+;; csi(1)
+
+(import (chicken process-context))
+
+;; Documentation
+(import apropos) ; provide ,a csi command - search for identifiers with Regex
+(import chicken-doc)
+(import (chicken load))
+
+(load-verbose #f)
+
+;; Line editing
+(import linenoise)
+(set-history-length! 10000)
+(current-input-port (make-linenoise-port))
+
+;; SRFIs
+;; (use srfi-1)
+;; (use srfi-13)
+
+;; (use srfi-14)
+;; (use srfi-69)
+;; (use srfi-18)
+
+;; (use srfi-43)
+
+; (import repl-imports)
+; (import introspect)
+(import trace)
+
+;; For portable scrips add this at the beggining:
+;; #!/usr/bin/env -S csi -s
+;; #!/usr/bin/csi -s

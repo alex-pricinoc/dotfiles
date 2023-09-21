@@ -1,0 +1,5 @@
+#!/usr/bin/env -S fish -N
+
+for file in $argv
+    scmfmt < $file | sponge $file
+end

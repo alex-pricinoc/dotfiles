@@ -1,0 +1,21 @@
+SHELL=/usr/bin/fish
+
+0 21 * * * batteries
+
+# field          allowed values
+# -----          --------------
+# minute         0-59
+# hour           0-23
+# day of month   1-31
+# month          0-12 (or names, see below)
+# day of week    0-7 (0 or 7 is Sun, or use names)
+
+
+# Special string	                Meaning
+# -------------                     ----------------
+# @reboot	                        Run at startup
+# @yearly / @annually (0 0 1 1 *)	Run once a year
+# @monthly (0 0 1 * *)	            Run once a month
+# @weekly (0 0 * * 0)	            Run once a week
+# @daily / @midnight (0 0 * * *)	Run once a day
+# @hourly (0 * * * *)	            Run once an hour

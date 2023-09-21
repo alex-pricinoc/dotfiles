@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+---
+title: ${1:${TM_FILENAME/(.*)\..*$/$1/}}
+created_at: ${2:current date by ctrl+<}
+updated_at: $2
+category: ${3:${TM_FILEPATH/\/.*\/([^\/]+)\/[^\/]+$/$1/}}
+---
+
+$0
+]]></content>
+    <tabTrigger>header</tabTrigger>
+    <scope>text.html.markdown</scope>
+</snippet>

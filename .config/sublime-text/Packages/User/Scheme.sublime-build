@@ -1,0 +1,15 @@
+{
+  "cmd": ["csi", "-s", "$file"],
+  "working_dir": "${file_path}",
+  "selector": "source.lisp",
+  "variants": [
+    {
+      "cmd": ["csc", "$file"],
+      "name": "compile"
+    },
+    {
+      "shell_cmd": "scmfmt < $file | sponge $file",
+      "name": "format"
+    }
+  ]
+}

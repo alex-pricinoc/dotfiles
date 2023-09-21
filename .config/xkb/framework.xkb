@@ -1,0 +1,6 @@
+xkb_keymap {
+  xkb_keycodes  { include "basic+framework" };
+  xkb_types     { include "complete" };
+  xkb_compat    { include "complete" };
+  xkb_symbols   { include "basic+us:1+ru:2+inet(evdev)+group(alt_space_toggle)" };
+};

@@ -1,0 +1,12 @@
+xkb_keycodes "magic" {
+  <LCTL> = 133;
+  <RCTL> = 134;
+  <LALT> =  64;
+  <RALT> = 108;
+
+  <SUPR> =  37;
+  <DELE> = 169;
+
+  <I232> = 232;   // BRIGHTNESSDOWN
+  <I233> = 233;   // BRIGHTNESSUP
+};

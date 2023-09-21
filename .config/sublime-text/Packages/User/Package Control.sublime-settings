@@ -1,0 +1,27 @@
+{
+  "bootstrapped": true,
+  "in_process_packages": [
+  ],
+  "installed_packages": [
+    "A File Icon",
+    "AdvancedNewFile",
+    "Color Scheme - Legacy",
+    "Dockerfile Syntax Highlighting",
+    "EditorConfig",
+    "ElixirSyntax",
+    "fish",
+    "LSP",
+    "LSP-json",
+    "LSP-rust-analyzer",
+    "MarkdownEditing",
+    "MarkdownPreview",
+    "Open in Default Application",
+    "Package Control",
+    "Sublime Tutor",
+    "SublimeLogCommands",
+    "TOML",
+    "Vue Syntax Highlight",
+    "Writer Color Scheme",
+  ],
+  "repositories": ["https://github.com/colinta/SublimeLogCommands"],
+}

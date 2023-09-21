@@ -1,0 +1,120 @@
+[user]
+
+  name             = Alex Pricinoc
+  email            = alex.pricinoc@icloud.com
+
+[core]
+
+  hookspath        = ~/.config/git/hooks
+  excludesfile     = ~/.config/git/ignore
+  autocrlf         = input
+  safecrlf         = warn
+
+[alias]
+
+  s                = status
+  l                = log --oneline -n 20 --graph
+
+  all              = add --intent-to-add --all
+
+  d                = diff
+  staged           = diff --staged
+
+  amend            = commit --amend
+  pushf            = push --force-with-lease
+
+  discard          = checkout HEAD
+  unstage          = reset --quiet HEAD
+  uncommit         = reset --soft HEAD^
+
+  edit             = rebase --interactive
+  continue         = rebase --continue
+  abort            = rebase --abort
+  skip             = rebase --skip
+  fix              = commit --fixup
+  pick             = cherry-pick
+
+  tags             = tag
+  branches         = branch -a
+  remotes          = remote -v
+
+  stashes          = stash list
+  save             = stash push
+  pop              = stash pop
+  drop             = stash drop
+
+  history          = log -p --follow  --
+  changes          = diff @{push}
+  unshallow        = remote set-branches origin '*'
+  recent           = ! git branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\" | head -10
+
+[fetch]
+
+  prune            = true
+  writecommitgraph = true
+
+[pull]
+
+  rebase           = true
+  ff               = only
+
+[merge]
+
+  ff               = only
+  conflictstyle    = diff3
+
+[push]
+
+  default          = current
+  followtags       = true
+
+[rebase]
+
+  autostash        = true
+  autosquash       = true
+
+[commit]
+
+  verbose          = true
+
+[branch]
+
+  sort             = -committerdate
+
+[diff]
+
+  algorithm        = histogram
+  noprefix         = true
+
+[color]
+
+  branch           = auto
+  diff             = auto
+  interactive      = auto
+  status           = auto
+  ui               = auto
+
+[status]
+
+  short            = true
+
+[log]
+
+  abbrevcommit     = true
+  date             = local
+
+[tag]
+
+  sort             = version:refname
+
+[rerere]
+
+  enabled          = true
+
+[help]
+
+  autocorrect      = 10
+
+[init]
+
+  defaultbranch    = main

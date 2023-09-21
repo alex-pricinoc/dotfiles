@@ -1,0 +1,19 @@
+#!/bin/sh
+
+remote=$1
+url=$2
+
+###extract host:
+host=${url#*@} # chop off the beginning until the first '@'
+host=${host%%:*} # chop off everything after the first ':'
+
+###extract org:
+org=${url#*:} # chop off the beginning until the first ':'
+org=${org%%/*} # chop off everything after the first '/'
+
+###extract project
+project=${url#*/} # chop off the beginning until the first '/'
+project=${project%%.*} # chop off the beginning until the first '.'
+while read local_ref local_sha remote_ref remote_sha; do
+  echo "Repository: https://$host/$org/$project"
+done

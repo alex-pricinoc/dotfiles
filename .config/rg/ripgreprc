@@ -1,0 +1,39 @@
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+# Add my 'web' type.
+--type-add
+web:*.{html,css,js}*
+
+# Set the colors.
+--colors=line:none
+--colors=line:style:bold
+
+# Because who cares about case!?
+--smart-case
+
+# Show hidden files
+--hidden
+
+# Follow links
+--follow
+
+# Match newlines when using multiline searching
+--multiline-dotall
+
+# Ignore or exclude files
+--glob=!.git/*
+
+# Files with matches
+# rg -l
+# rg -l '// FIXME/ --sort path
+#
+# Search for strings, rather than regex
+# rg -F '?.'
+#
+# Specific file types
+# rg -t js '@format'
+#
+# Glob search
+# rg -g 'parser-*.js' '// FIXME/

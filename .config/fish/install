@@ -1,0 +1,70 @@
+#!/usr/bin/env fish
+
+# git clone --bare git@github.com:alex-pricinoc/dotfiles.git $HOME/.dotfiles
+# dot config --local status.showuntrackedfiles no
+
+sudo yum install -y fish
+chsh -s $(which fish)
+
+#
+## Sway Desktop
+#
+
+sudo yum install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-(rpm -E %fedora).noarch.rpm
+
+sudo yum install -y intel-media-driver igt-gpu-tools
+
+sudo yum install -y @sway-desktop-environment sway-systemd
+# Sway Window Manager (supplemental packages)
+# yum groupinfo swaywm-extended
+
+# packages
+sudo yum install -y alacritty helix ripgrep fd-find fzf \
+    light libnotify mako wlsunset darkman gnome-themes-extra polkit-gnome wtype \
+    perl-File-MimeInfo perl-Graph-Easy \
+    imv zathura zathura-plugins-all zathura-pdf-mupdf \
+    usbmuxd ifuse \
+    pandoc moreutils zstd inotify-tools \
+    cuetools shntool mac flac
+
+# mail & password manager
+# git clone git@git.sr.ht:~alex-pricinoc/pass $PASSWORD_STORE_DIR
+sudo yum install -y aerc pass pass-otp
+
+# rust packages
+sudo yum install -y rust cargo rustfmt clippy rust-analyzer \
+    rust-src rust-doc rust-gdb rust-lldb
+# cargo i dprint cargo-watch ripgrep_all du-dust flamegraph loc
+
+# sublime text
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+sudo yum install -y sublime-text sublime-merge
+
+
+# fingerprint sensor
+sudo yum install -y fprintd fprintd-pam
+sudo fprintd-enroll alex
+systemctl status fprintd.service
+
+# improve power saving for NVMe drives
+sudo grubby --update-kernel=ALL --args="nvme.noacpi=1"
+
+# enable brightness keys
+sudo grubby --update-kernel=ALL --args="module_blacklist=hid_sensor_hub"
+
+dconf load / <$XDG_CONFIG_HOME/gnome/settings.ini
+ln -s $XDG_CONFIG_HOME/misc/caustics.png $XDG_STATE_HOME/wallpaper
+echo "install_weak_deps=False" | sudo tee -a /etc/dnf/dnf.conf
+crontab $XDG_CONFIG_HOME/cron/crontab
+sudo cp $XDG_CONFIG_HOME/udev/*.rules /etc/udev/rules.d/
+mkdir -p $XDG_TRASH_DIR
+set -U fish_greeting
+
+# curl -L "https://github.com/samuelngs/apple-emoji-linux/releases/download/ios-14.6/AppleColorEmoji.ttf" -o $XDG_FONTS_DIR/AppleColorEmoji.ttf
+sudo yum install -y rsms-inter-fonts ibm-plex-sans-fonts
+
+
+# Framework Tool
+# git clone https://github.com/FrameworkComputer/framework-system.git $XDG_DATA_HOME/framework-system
+cargo i --path $XDG_DATA_HOME/framework-system/framework_tool

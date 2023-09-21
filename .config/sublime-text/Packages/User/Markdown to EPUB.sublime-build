@@ -1,0 +1,5 @@
+{
+    "cmd": ["pandoc", "$file_name", "--output=$file_base_name.epub"],
+    "file_patterns": ["*.md"],
+    "selector": "source.markdown"
+}

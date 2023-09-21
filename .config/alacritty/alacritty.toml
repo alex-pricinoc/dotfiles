@@ -1,0 +1,25 @@
+import = ["~/.config/alacritty/themes/rasmus-bright.toml"]
+
+[font]
+size = 18.0
+
+[font.normal]
+family = "JetBrains Mono"
+
+[scrolling]
+multiplier = 5
+
+[window]
+padding = { x = 10, y = 10 }
+dimensions = { columns = 80, lines = 25 }
+
+[keyboard]
+bindings = [
+  { key = "Home",   mods = "Control",    mode = "~Alt",  action = "ScrollToTop"      },
+  { key = "PageUp",                      mode = "~Alt",  action = "ScrollPageUp"     },
+  { key = "PageDown",                    mode = "~Alt",  action = "ScrollPageDown"   },
+  { key = "End",    mods = "Control",    mode = "~Alt",  action = "ScrollToBottom"   },
+  { key = "Return", mods = "Super|Shift",                action = "CreateNewWindow"  },
+  { key = "Equals", mods = "Control",                    action = "None"             },
+  { key = "Minus",  mods = "Control",                    action = "None"             },
+]

@@ -1,0 +1,7 @@
+html {
+    --mdpopups-font-mono: "JetBrains Mono";
+}
+
+html.light, html.dark {
+    --mdpopups-bg:  var(--background);
+}

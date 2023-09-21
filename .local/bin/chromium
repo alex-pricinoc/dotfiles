@@ -1,0 +1,7 @@
+#!/usr/bin/env -S fish -N
+
+set -l flags (cat ~/.config/chromium-flags.conf | string match -r -- "^--.*")
+set -a flags --user-data-dir=$XDG_DATA_HOME/chromium
+set -a flags --disk-cache-dir=$XDG_RUNTIME_DIR/chromium-cache
+
+exec ~/Applications/ungoogled-chromium/chrome $flags $argv

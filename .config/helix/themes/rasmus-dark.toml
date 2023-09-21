@@ -1,0 +1,8 @@
+inherits = "rasmus"
+
+"ui.cursor" = { bg = "gray06" }
+"ui.cursor.select" = { bg = "gray06" }
+"ui.cursor.primary" = { fg = "black", bg = "gray07" }
+
+"ui.selection" = { bg = "gray03" }
+"ui.selection.primary" = { bg = "gray04" }
