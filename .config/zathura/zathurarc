@@ -1,0 +1,10 @@
+map i recolor
+map p print
+
+set guioptions ""
+set selection-clipboard clipboard
+set font "monospace 14"
+
+set sandbox none
+
+# set recolor true

@@ -1,0 +1,11 @@
+{
+  "cmd": ["csi", "-s", "$file"],
+  "working_dir": "${file_path}",
+  "selector": "source.lisp",
+  "variants": [
+    {
+      "cmd": ["csc", "$file"],
+      "name": "compile"
+    }
+  ]
+}

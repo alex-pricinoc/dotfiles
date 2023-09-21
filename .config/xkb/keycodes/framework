@@ -1,0 +1,10 @@
+xkb_keycodes "framework" {
+  <LCTL> =  64;
+  <RCTL> = 108;
+  <LALT> = 133;
+  <RALT> = 105;
+
+  <PRSC> = 107;
+
+  <SUPR> =  37;
+};

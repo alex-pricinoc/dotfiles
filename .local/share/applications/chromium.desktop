@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Chromium
+GenericName=Web Browser
+Exec=chromium %U
+Terminal=false
+Type=Application

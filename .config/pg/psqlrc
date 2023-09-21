@@ -1,0 +1,21 @@
+-- Be quiet while running the following commands
+\set QUIET 1
+
+-- Show NULL as (null)
+\pset null [null]
+
+-- Display timing information for all queries
+\timing
+
+-- Set auto expanded table formatting mode.
+\x auto
+
+-- \set ON_ERROR_ROLLBACK interactive
+-- \set VERBOSITY verbose
+
+-- Custom prompt
+\set PROMPT1 '%[%033[1m%]%M/%/%R%[%033[0m%]%# '
+\set PROMPT2 ''
+
+-- We are done so no go back to not being quiet.
+\unset QUIET

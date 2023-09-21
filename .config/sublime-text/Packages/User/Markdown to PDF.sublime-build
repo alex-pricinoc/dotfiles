@@ -1,0 +1,26 @@
+{
+    "cmd": [
+        "pandoc",
+        "$file_name",
+        "--output=$file_base_name.pdf",
+        // "-V",
+        // "documentclass=article"
+    ],
+    "file_patterns": [
+        "*.md"
+    ],
+    "selector": "source.markdown",
+    "variants": [
+        {
+            "name": "Lualatex template",
+            "cmd": [
+                "pandoc",
+                "$file_name",
+                "--output=$file_base_name.pdf",
+                "--template=latex.template",
+                "--pdf-engine=lualatex",
+                "--pdf-engine-opt=--shell-escape",
+            ]
+        },
+    ]
+}

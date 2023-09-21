@@ -1,0 +1,32 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+
+  "lsp_format_on_save": true,
+
+  "lsp_code_actions_on_save": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+  },
+
+  "show_code_actions": "bulb",
+  "diagnostics_gutter_marker": "",
+
+  "show_symbol_action_links": false,
+  "popup_max_characters_width": 80,
+
+  "show_code_lens": "phantom",
+  "show_inlay_hints": true,
+  "link_highlight_style": "none",
+  "document_highlight_style": "",
+
+  // "inhibit_snippet_completions": true,
+  // "inhibit_word_completions": true,
+
+  // "on_save_task_timeout_ms": 5000,
+
+  // "log_debug": true,
+  // "log_server": ["panel"],
+
+  // "diagnostics_delay_ms": 100,
+
+}

@@ -1,0 +1,15 @@
+#!/usr/bin/env -S fish -N
+
+for file in $argv
+    test -e $file || continue
+
+    set -l dest $XDG_TRASH_DIR/(path basename -- $file)
+
+    while test -e $dest
+        set dest "$dest (1)"
+    end
+
+    echo moving $file to $dest
+
+    mv $file $dest
+end

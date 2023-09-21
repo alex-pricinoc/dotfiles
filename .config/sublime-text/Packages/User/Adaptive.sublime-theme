@@ -1,0 +1,16 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+  "variables":
+  {
+  },
+  "rules":
+  [
+    // Tabs menu button (disable)
+    { "class": "show_tabs_dropdown_button",
+      "layer0.texture": null,
+      "layer0.opacity": 0.0,
+      "layer0.inner_margin": [0, 0,0, 0],
+      "content_margin": [0, 0]
+    },
+  ]
+}

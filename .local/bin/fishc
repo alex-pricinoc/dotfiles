@@ -1,0 +1,5 @@
+#!/usr/bin/env -S fish -N
+
+set -l args (string escape -- $argv)
+
+fish -c "$args"

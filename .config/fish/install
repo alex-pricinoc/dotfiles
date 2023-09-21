@@ -1,0 +1,87 @@
+#!/usr/bin/env fish
+
+# git clone --bare git@github.com:alex-pricinoc/dotfiles.git $HOME/.dotfiles
+# dot config --local status.showuntrackedfiles no
+
+sudo yum install -y fish
+fish
+chsh -s (which fish)
+
+yumi https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-(rpm -E %fedora).noarch.rpm
+
+#
+## Sway Desktop
+#
+yumi @sway-desktop-environment sway-systemd
+yum groupinfo swayvm-extended
+
+yumi alacritty ripgrep fd-find fzf
+
+# utilities
+yumi light libnotify mako wlsunset darkman gnome-themes-extra polkit-gnome
+yumi zathura zathura-plugins-all
+yumi wtype
+
+# mail & password manager
+yumi aerc pass pass-otp
+# git clone git@git.sr.ht:~alex-pricinoc/pass $PASSWORD_STORE_DIR
+
+# communication with iOS devices
+yumi usbmuxd ifuse
+
+# music
+yumi cuetools shntool mac flac picard chromaprint-tools
+
+# other
+yumi zstd pandoc inotify-tools perl-File-MimeInfo perl-Graph-Easy
+yumi hyperfine
+
+#
+## Rust
+#
+yumi rust rust-src rust-doc rust-gdb rust-lldb cargo rustfmt clippy rust-analyzer
+cargo install --locked dprint cargo-watch ripgrep_all du-dust
+
+for path in $XDG_BIN_HOME/rs/*
+    cargo install --locked --path $path
+end
+
+#
+## Editors
+#
+git clone git@github.com:helix-editor/helix.git $XDG_DATA_HOME/helix
+cargo install --locked --path $XDG_DATA_HOME/helix/helix-term
+
+sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+yumi sublime-text sublime-merge
+
+#
+## Other
+#
+
+crontab $XDG_CONFIG_HOME/cron/crontab
+
+sudo cp $XDG_CONFIG_HOME/udev/*.rules /etc/udev/rules.d/
+
+echo "install_weak_deps=False" | sudo tee -a /etc/dnf/dnf.conf
+dconf load / <$XDG_CONFIG_HOME/gnome/settings.ini
+
+curl -L "https://github.com/samuelngs/apple-emoji-linux/releases/download/ios-14.6/AppleColorEmoji.ttf" -o $XDG_FONTS_DIR/AppleColorEmoji.ttf
+
+ln -s $XDG_CONFIG_HOME/misc/caustics.png $XDG_STATE_HOME/wallpaper
+
+# improve power saving for NVMe drives
+grubby --update-kernel=ALL --args="nvme.noacpi=1"
+
+# enable brightness keys
+grubby --update-kernel=ALL --args="module_blacklist=hid_sensor_hub"
+
+# fingerprint sensor
+yumi fprintd fprintd-pam
+sudo fprintd-enroll alex
+systemctl status fprintd.service
+
+# Framework Tool
+git clone https://github.com/FrameworkComputer/framework-system.git $XDG_DATA_HOME/framework-system
+cargo install --locked --path $XDG_DATA_HOME/framework-system/framework_tool

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+FILE_CONTENTS="$(<$1)"
+node -i -e "$FILE_CONTENTS"

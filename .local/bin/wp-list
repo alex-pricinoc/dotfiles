@@ -1,0 +1,33 @@
+#!/usr/bin/wpexec
+
+local argv = ...
+
+local class = argv.source and "Audio/Source" or "Audio/Sink"
+
+local om = ObjectManager {
+	Interest { type = "node", Constraint { "media.class", "=", class, type = "pw-global" } },
+}
+
+-- Common function to print nodes
+local function printNode(node)
+  local id = node["bound-id"]
+  local global_props = node["properties"]
+
+	if argv.name then
+		print (id .. "\t" .. global_props["node.name"])
+	else
+		print (id .. "\t" .. global_props["node.description"])
+	end
+
+
+end
+
+om:connect("objects-changed", function()
+	for n in om:iterate() do
+		printNode(n)
+	end
+
+	Core.quit()
+end)
+
+om:activate()

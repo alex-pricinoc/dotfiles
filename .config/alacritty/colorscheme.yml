@@ -1,0 +1,54 @@
+schemas:
+  rasmus_dark: &dark
+    primary:
+      background: "#1A1A19"
+      foreground: "#D1D1D1"
+    cursor:
+      text: "#1A1A19"
+      cursor: "#B6B6B7"
+    normal:
+      black: "#333332"
+      red: "#FF968C"
+      green: "#61957F"
+      yellow: "#FFC591"
+      blue: "#8DB4D4"
+      magenta: "#DE9BC8"
+      cyan: "#7BB099"
+      white: "#D1D1D1"
+    bright:
+      black: "#4C4C4B"
+      red: "#FFAFA5"
+      green: "#7AAE98"
+      yellow: "#FFDEAA"
+      blue: "#A6CDED"
+      magenta: "#F7B4E1"
+      cyan: "#94C9B2"
+      white: "#EAEAEA"
+
+    rasmus_light: &light
+      primary:
+        foreground: "#222222"
+        background: "#FDFDFC"
+      cursor:
+        text: "#1A1A19"
+        cursor: "#CFCFCF"
+      normal:
+        black: "#EEEEEE"
+        red: "#A8334C"
+        green: "#116432"
+        yellow: "#944927"
+        blue: "#286486"
+        magenta: "#88507D"
+        cyan: "#3B8992"
+        white: "#353535"
+      bright:
+        black: "#C6C3C3"
+        red: "#94253E"
+        green: "#060E0C"
+        yellow: "#803D1C"
+        blue: "#1D5573"
+        magenta: "#7B3B70"
+        cyan: "#2B747C"
+        white: "#5C5C5C"
+
+colors: *light

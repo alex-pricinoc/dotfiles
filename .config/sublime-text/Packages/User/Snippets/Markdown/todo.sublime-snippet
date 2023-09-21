@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+## TODO
+
+- [ ] $0
+
+]]></content>
+    <tabTrigger>todo</tabTrigger>
+    <scope>text.html.markdown</scope>
+</snippet>

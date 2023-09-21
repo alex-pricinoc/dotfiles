@@ -1,0 +1,1 @@
+SUBSYSTEM=="power_supply", ACTION=="change", ENV{POWER_SUPPLY_TYPE}=="Mains", RUN+="/usr/bin/pkill -SIGRTMIN+1 sway-status"

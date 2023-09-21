@@ -1,0 +1,5 @@
+{
+  "shell_cmd": "npx prettier --write $file",
+  "selector": "source.js, source.ts, text.html.vue",
+  "quiet": true,
+}
